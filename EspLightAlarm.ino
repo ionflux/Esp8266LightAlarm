@@ -1,5 +1,3 @@
-#include <TimeLib.h>
-#include "Time.h"
 const char* ProhectName = "EspLightAlarm v1.1";
 
 void setup() {
