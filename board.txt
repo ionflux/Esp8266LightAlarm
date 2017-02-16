@@ -1,0 +1,5 @@
+# sketch_feb16a build property overrides
+#
+network.port=8266
+network.password=1520
+network.auth_upload=yes
