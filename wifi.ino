@@ -32,7 +32,7 @@ void setup_wifi() {
 	}
 
 	Serial.println("=== WiFi Settings ====================");
-	WiFi.printDiag(Serial);
+	// WiFi.printDiag(Serial);
 	Serial.print("IP address: ");
 	Serial.println(WiFi.localIP());
 	Serial.println("======================================");

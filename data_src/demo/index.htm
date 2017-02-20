@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Single Page Application Micro Framework Demo</title>
+    <style></style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../spapp.js"></script>
+    <script type="text/javascript" src="repeatable.js"></script>
+    <script type="text/javascript" src="data/contact-data.js"></script>
+    <style> 
+      @import url(demo-styles.css);
+    </style>
+  </head>
+<body>
+
+  <nav>
+    <a href="#contact-list">Contacts</a>
+    <a href="#about">About</a>
+  </nav>
+  
+  <section id="contact-list">
+<h2>Contact list</h2>
+
+<ol class="contacts" >
+  <li>
+      <a href="#contact-details:{{this.id}}">
+        {{this.firstName}}
+        {{this.lastName}} 
+      </a>
+      <span class="touchpoints">{{this.touchpoints}}</span>
+  </li>
+  <li>You have no contacts yet.</li>
+</ol>
+
+</section>
+  <section id="contact-details" src="pages/contact-details.htm"></section>
+  <section id="about" default><p>Demo of Single Page Application micro framework</p></section>
+
+<script>
+
+  app.page("about", function() 
+  {
+	// alert(123);
+  }); 
+
+  app.page("contact-list", function() 
+  {
+    // initialize view variables
+    var list = $(this).find("ol.contacts").repeatable();
+        
+    // present the view - load data and show: 
+    return function(params) {
+      list.value = contacts; // populating the list
+    }
+  }); 
+</script>
+
+
+</body>
+</html>

@@ -9,7 +9,7 @@ void ota_handle_start() {
 }
 
 void ota_handle_end() {
-	Serial.println("OTA: End. Rebooting in 0.1 seconds...");
+	Serial.println("\nOTA: End. Rebooting in 0.1 seconds...");
 	delay(100);
 	ESP.reset();
 }

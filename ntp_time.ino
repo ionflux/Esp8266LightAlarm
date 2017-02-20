@@ -1,5 +1,7 @@
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
+#include <DS1302RTC.h>
+#include <Time.h>
 #include <TimeLib.h>
 
 static const char ntpServerName[] = "time.windows.com";
