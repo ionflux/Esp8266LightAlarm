@@ -21,16 +21,22 @@ void sendNTPpacket(IPAddress &address);
 void setup_ntp() {
 
 	Serial.println("NTP: Setup client...");
-	Serial.println("NTP: Starting UDP");
-	Udp.begin(localPort);
-	Serial.print("NTP: UPD local port: ");
-	Serial.println(Udp.localPort());
-	Serial.println("NTP: Waiting for sync");
 
-	setSyncProvider(getNtpTime);
-	setSyncInterval(300);
+	if (!IsAPMode) {
+		Serial.println("NTP: Starting UDP");
+		Udp.begin(localPort);
+		Serial.print("NTP: UPD local port: ");
+		Serial.println(Udp.localPort());
+		Serial.println("NTP: Waiting for sync");
 
-	digitalClockDisplay();
+		setSyncProvider(getNtpTime);
+		setSyncInterval(300);
+
+		digitalClockDisplay();
+	}
+	else {
+		Serial.println("NTP: Skipped! WiFi in AP mode.");
+	}
 }
 
 void digitalClockDisplay()

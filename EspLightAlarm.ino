@@ -1,5 +1,7 @@
 const char* ProhectName = "EspLightAlarm v1.1";
 
+bool IsAPMode = false;
+
 void setup() {
 
 	Serial.begin(115200);
